@@ -23,6 +23,15 @@ Check out [W3Schools' SQL Reference](http://www.w3schools.com/sql/sql_syntax.asp
 ```SQL
 /* Add your answer below */
 
+MediaType.where(name: "Protected MPEG-4 video file")
+
+# This returns ID 3
+
+Track.where(media_type_id: 3).count
+
+# This returns 214 (tracks)
+
+
 ```
 
 2. Find the least expensive Track that has the Genre "Electronica/Dance".
