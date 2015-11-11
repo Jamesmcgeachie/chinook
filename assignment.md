@@ -23,12 +23,19 @@ Check out [W3Schools' SQL Reference](http://www.w3schools.com/sql/sql_syntax.asp
 ```SQL
 /* Add your answer below */
 
-MediaType.where(name: "Protected MPEG-4 video file")
+With SQL:
 
+SELECT id FROM media_types WHERE name='Protected MPEG-4 video file';
+# = 3
+SELECT COUNT(media_type_id) FROM tracks WHERE media_type_id = 3;
+# = 214
+
+With ActiveRecord:
+
+MediaType.where(name: "Protected MPEG-4 video file")
 # This returns ID 3
 
 Track.where(media_type_id: 3).count
-
 # This returns 214 (tracks)
 
 
