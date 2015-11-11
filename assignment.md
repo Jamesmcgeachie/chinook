@@ -51,7 +51,7 @@ SELECT id FROM genres WHERE name='Electronica/Dance'
 # = 15
 SELECT name, unit_price FROM tracks WHERE genre_id='15' ORDER BY unit_price DESC LIMIT(1);
 # = Instinto Colectivo 0.99
-(there are 30 tracks at 0.99 but this is what's delivered with limit 1)
+# (there are 30 tracks at 0.99 but this is what's delivered with limit 1)
 
 
 ```
@@ -59,6 +59,9 @@ SELECT name, unit_price FROM tracks WHERE genre_id='15' ORDER BY unit_price DESC
 3. Find the all the Artists whose names start with A.
 ```SQL
 /* Add your answer below */
+
+SELECT name FROM artists WHERE name LIKE 'A%';
+# 26 rows, so 26 artists.
 
 ```
 
