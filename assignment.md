@@ -26,17 +26,9 @@ Check out [W3Schools' SQL Reference](http://www.w3schools.com/sql/sql_syntax.asp
 With SQL:
 
 SELECT id FROM media_types WHERE name='Protected MPEG-4 video file';
-# = 3
+<!--  3 -->
 SELECT COUNT(media_type_id) FROM tracks WHERE media_type_id = 3;
-# = 214
-
-With ActiveRecord:
-
-MediaType.where(name: "Protected MPEG-4 video file")
-# This returns ID 3
-
-Track.where(media_type_id: 3).count
-# This returns 214 (tracks)
+<!-- 214 -->
 
 
 ```
@@ -47,11 +39,11 @@ Track.where(media_type_id: 3).count
 
 With SQL
 
-SELECT id FROM genres WHERE name='Electronica/Dance'
-# = 15
+SELECT id FROM genres WHERE name='Electronica/Dance';
+<!-- 15 -->
 SELECT name, unit_price FROM tracks WHERE genre_id='15' ORDER BY unit_price DESC LIMIT(1);
-# = Instinto Colectivo 0.99
-# (there are 30 tracks at 0.99 but this is what's delivered with limit 1)
+<!--  Instinto Colectivo 0.99 -->
+<!-- (there are 30 tracks at 0.99 but this is what's delivered with limit 1) -->
 
 
 ```
@@ -61,7 +53,7 @@ SELECT name, unit_price FROM tracks WHERE genre_id='15' ORDER BY unit_price DESC
 /* Add your answer below */
 
 SELECT name FROM artists WHERE name LIKE 'A%';
-# 26 rows, so 26 artists.
+<!--  26 rows, so 26 artists. -->
 
 ```
 
@@ -70,7 +62,7 @@ SELECT name FROM artists WHERE name LIKE 'A%';
 /* Add your answer below */
 
 SELECT COUNT(track_id) FROM playlists_tracks WHERE playlist_id=1;
-# 3290
+<!-- 3290 -->
 
 ```
 
@@ -171,9 +163,9 @@ Count how many tracks belong to the "Hip Hop/Rap" genre
 # Enter your answer below
 
 Genre.find_by_name('Hip Hop/Rap')
-# 17
+<!--  17 -->
 Track.where(genre_id: 17).count
-# 35
+<!--  35 -->
 ```
 
 Find the most expensive Track that has the MediaType "MPEG audio file".
@@ -181,9 +173,9 @@ Find the most expensive Track that has the MediaType "MPEG audio file".
 # Enter your answer below
 
 MediaType.find_by_name("MPEG audio file")
-# 1
+<!--  1 -->
 Track.where(media_type_id: 1).order(unit_price: :desc).take.name
-# "Put the Finger on You"
+<!--  "Put the Finger on You" -->
 
 ```
 
@@ -192,8 +184,8 @@ Find the 2 oldest Artists.
 # Enter your answer below
 
 Artist.all.order(created_at: :asc).limit(2)
-# Les Arts FLorissants & William Christie
-# Baby Consuelo
+<!--  Les Arts FLorissants & William Christie -->
+<!-- Baby Consuelo -->
 ```
 
 
@@ -202,11 +194,12 @@ Find all the Tracks that belong to the 2 most recent Playlist.
 # Enter your answer below
 
 Playlist.order(created_at: :desc).limit(2).map { |playlist| playlist.tracks }
-# this delivers an array of 2 arrays with all tracks for each playlist within them
-# to count could do this
+<!-- # this delivers an array of 2 arrays with all tracks for each playlist within them
+# to count could do this -->
 
+<!--
 tracks = Playlist.order(created_at: :desc).limit(2).map { |playlist| playlist.tracks }
-tracks.flatten.count
+tracks.flatten.count -->
 
 ```
 
