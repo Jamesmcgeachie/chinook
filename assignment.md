@@ -69,6 +69,9 @@ SELECT name FROM artists WHERE name LIKE 'A%';
 ```SQL
 /* Add your answer below */
 
+SELECT name FROM playlists WHERE id=1;
+# 3290
+
 ```
 
 ## Active Record Query Interface
