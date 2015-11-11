@@ -19,7 +19,7 @@ Of course, these can be done as one or more steps.
 
 Check out [W3Schools' SQL Reference](http://www.w3schools.com/sql/sql_syntax.asp) as a reference.
 
-1. Count how many tracks belong to the MediaType "Protected MPEG-4 video file".
+Count how many tracks belong to the MediaType "Protected MPEG-4 video file".
 ```SQL
 /* Add your answer below */
 
@@ -30,7 +30,7 @@ SELECT COUNT(media_type_id) FROM tracks WHERE media_type_id = 3;
 
 ```
 
-2. Find the least expensive Track that has the Genre "Electronica/Dance".
+Find the least expensive Track that has the Genre "Electronica/Dance".
 ```SQL
 /* Add your answer below */
 
@@ -41,7 +41,7 @@ SELECT name, unit_price FROM tracks WHERE genre_id='15' ORDER BY unit_price DESC
 
 ```
 
-3. Find the all the Artists whose names start with A.
+Find the all the Artists whose names start with A.
 ```SQL
 /* Add your answer below */
 
@@ -49,11 +49,12 @@ SELECT name FROM artists WHERE name LIKE 'A%';
 
 ```
 
-4. Find all the Tracks that belong to the first Playlist.
+Find all the Tracks that belong to the first Playlist.
 ```SQL
 /* Add your answer below */
 
-SELECT COUNT(track_id) FROM playlists_tracks WHERE playlist_id=1;
+SELECT a.name FROM tracks a INNER JOIN playlists_tracks b ON a.id=b.track_id WHERE b.playlist_id=1;
+
 
 ```
 
