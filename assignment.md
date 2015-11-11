@@ -70,6 +70,7 @@ SELECT name FROM artists WHERE name LIKE 'A%';
 /* Add your answer below */
 
 SELECT COUNT(track_id) FROM playlists_tracks WHERE playlist_id=1;
+# 3290
 
 ```
 
@@ -165,28 +166,47 @@ Track.minimum(:unit_price)
 ### Exercise
 Of course, these can be done as one or more steps.
 
-1. Count how many tracks belong to the "Hip Hop/Rap" genre
+Count how many tracks belong to the "Hip Hop/Rap" genre
 ```ruby
 # Enter your answer below
+
+Genre.find_by_name('Hip Hop/Rap')
+# 17
+Track.where(genre_id: 17).count
+# 35
+```
+
+Find the most expensive Track that has the MediaType "MPEG audio file".
+```ruby
+# Enter your answer below
+
+MediaType.find_by_name("MPEG audio file")
+# 1
+Track.where(media_type_id: 1).order(unit_price: :desc).take.name
+# "Put the Finger on You"
 
 ```
 
-2. Find the most expensive Track that has the MediaType "MPEG audio file".
+Find the 2 oldest Artists.
 ```ruby
 # Enter your answer below
 
-```
-
-3. Find the 2 oldest Artists.
-```ruby
-# Enter your answer below
-
+Artist.all.order(created_at: :asc).limit(2)
+# Les Arts FLorissants & William Christie
+# Baby Consuelo
 ```
 
 
-4. Find all the Tracks that belong to the 2 most recent Playlist.
+Find all the Tracks that belong to the 2 most recent Playlist.
 ```ruby
 # Enter your answer below
+
+Playlist.order(created_at: :desc).limit(2).map { |playlist| playlist.tracks }
+# this delivers an array of 2 arrays with all tracks for each playlist within them
+# to count could do this
+
+tracks = Playlist.order(created_at: :desc).limit(2).map { |playlist| playlist.tracks }
+tracks.flatten.count
 
 ```
 
