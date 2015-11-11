@@ -23,8 +23,6 @@ Check out [W3Schools' SQL Reference](http://www.w3schools.com/sql/sql_syntax.asp
 ```SQL
 /* Add your answer below */
 
-With SQL:
-
 SELECT id FROM media_types WHERE name='Protected MPEG-4 video file';
 SELECT COUNT(media_type_id) FROM tracks WHERE media_type_id = 3;
 
@@ -36,7 +34,6 @@ SELECT COUNT(media_type_id) FROM tracks WHERE media_type_id = 3;
 ```SQL
 /* Add your answer below */
 
-With SQL
 
 SELECT id FROM genres WHERE name='Electronica/Dance';
 SELECT name, unit_price FROM tracks WHERE genre_id='15' ORDER BY unit_price DESC LIMIT(1);
